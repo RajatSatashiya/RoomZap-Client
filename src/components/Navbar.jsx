@@ -18,9 +18,11 @@ function Navbar() {
         </LLB>
       <ul className="nav-list">
         <li>
-          <Link to="experience" smooth={true} offset={-height - 5}>
+          {/* <Link to="experience" smooth={true} offset={-height - 5}> */}
+          <LLB to="/rentals" className="llblink">
             Find PGs
-          </Link>
+          </LLB>
+          {/* </Link> */}
         </li>
         <li>
           <Link to="projects" smooth={true} offset={-height - 5}>
