@@ -35,9 +35,7 @@ function Rentals() {
   }, []);
   return (
     <>
-      <div className="rentalCards">
-        {loadRentals()} {loadRentals()}
-      </div>
+      <div className="rentalCards">{loadRentals()}</div>
     </>
   );
 }

@@ -25,9 +25,9 @@ function Navbar() {
           {/* </Link> */}
         </li>
         <li>
-          <Link to="projects" smooth={true} offset={-height - 5}>
+          <LLB to="/createRental" className="llblink">
             Rent a Room
-          </Link>
+          </LLB>
         </li>
         <li>
           <LLB to="/register" className="signup">
