@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -7,6 +8,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Rentals from "./components/Rentals";
 import Room from "./components/Room";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/rentals" element={<Rentals />}></Route>
           <Route path="/createRental" element={<Room />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
+        <Footer />
       </Router>
     </>
   );

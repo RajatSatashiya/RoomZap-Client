@@ -33,7 +33,7 @@ function Home() {
         },
       });
       const data = await response.json();
-      authContext.login(data.message.token);
+      authContext.login(data.message.token, data.message._id);
       userContext.writeEmail(email);
 
       const tokenValue = localStorage.getItem("token");

@@ -1,0 +1,124 @@
+/**** CSS -> Register.js  ****/
+.register-page {
+  display: flex;
+  /* flex-direction: row; */
+  width: 70%;
+  height: 80vh;
+  background: white;
+  margin: auto;
+  margin-top: 2rem;
+  box-shadow: 0px 0px 25px -15px black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.regRight {
+  width: 60%;
+  height: 100%;
+}
+.regLeft {
+  background: #ff5f6d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc371,
+    #ff5f6d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc371,
+    #ff5f6d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  width: 40%;
+  display: flex;
+  padding: 3rem;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.regLeft h3 {
+  font-family: "Montserrat";
+  font-size: 2.5rem;
+}
+.regLeft p {
+  font-family: "Hind";
+  line-height: 1.2rem;
+  margin: 1.5rem 1rem;
+  font-size: 1.1rem;
+}
+.regLeft button,
+.submit-btn {
+  font-size: 0.7rem;
+  font-family: "Montserrat";
+  font-weight: 700;
+  padding: 0.7rem 3rem;
+  border-radius: 20px;
+  border: 1px solid black;
+  background: transparent;
+  cursor: pointer;
+}
+.regRight h2 {
+  text-align: center;
+}
+.regRight form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background: pink; */
+  justify-content: center;
+  align-items: center;
+}
+.regRight form input {
+  width: 60%;
+  font-family: Montserrat;
+  font-weight: 300;
+  padding: 1.4rem;
+  border: none;
+  border-radius: 4px;
+  background: #e8eef0;
+  margin: 0.3rem;
+  outline: none;
+}
+.form-title {
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+
+  color: #ff5f6d; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #ffc371,
+    #ff5f6d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #ffc371,
+    #ff5f6d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.submit-btn {
+  margin-top: 1rem;
+  background: #ff5f6d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc371,
+    #ff5f6d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc371,
+    #ff5f6d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  font-weight: 500;
+}
+.submit-btn:hover {
+  transform: scale(1.03);
+}
+.forgot {
+  font-family: Hind;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+}

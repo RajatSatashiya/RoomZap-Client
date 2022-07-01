@@ -1,0 +1,63 @@
+/********* Room.js ***********/
+.rentaroom {
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 50%;
+  min-width: 35rem;
+  background: #4568dc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b06ab3,
+    #4568dc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b06ab3,
+    #4568dc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.innerclass {
+  display: flex;
+  justify-content: space-evenly;
+}
+.rentaroom label {
+  display: block;
+  font-family: Paytone One;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  margin-top: 0.7rem;
+}
+.rentaroom input,
+.rentaroom select,
+.rentaroom textarea {
+  width: 100%;
+  font-family: Montserrat;
+  font-weight: 300;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 4px;
+  margin: 0.3rem;
+  /* outline: none; */
+}
+.roomSubmit {
+  font-size: 0.7rem;
+  font-family: "Montserrat";
+  font-weight: 700;
+  padding: 0.7rem 3rem;
+  border-radius: 20px;
+  border: 1px solid black;
+  background: transparent;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.4s ease-in-out;
+}
+.roomSubmit:hover {
+  color: #f9ada0;
+  background: #7661a5;
+  transform: scale(1.09);
+}
+.submitBtn {
+  text-align: center;
+}

@@ -1,5 +1,8 @@
 import React from "react";
 import { useState, useRef, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/authContext";
+import "./stylings/Room.css";
 
 function Room() {
   const aptTypeInputRef = useRef(null);
@@ -13,6 +16,9 @@ function Room() {
   const stateInputRef = useRef(null);
   const pincodeInputRef = useRef(null);
   const countryInputRef = useRef(null);
+
+  const authContext = useContext(AuthContext);
+  const history = useNavigate();
 
   const createRoom = async (
     apartmentType,
@@ -45,9 +51,15 @@ function Room() {
         }),
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${authContext.token}`,
         },
       });
       const data = await response.json();
+      var { status } = data;
+      if (status == "success") {
+        history("/");
+      }
+
       console.log(data);
     } catch (e) {
       console.log("Error: " + e);

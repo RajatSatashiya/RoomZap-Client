@@ -1,12 +1,30 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
-import "./Navbar.css";
+import { useRef, useState, useContext, useEffect } from "react";
+import "./stylings/Navbar.css";
 import { Link } from "react-scroll";
 import { Link as LLB } from "react-router-dom";
+import AuthContext from "../context/authContext";
 
 function Navbar() {
   const [height, setHeight] = useState();
   const navbar = useRef();
+  const authContext = useContext(AuthContext);
+
+  const buttonValue = (flag) => {
+    if(flag) {
+      return (
+          <LLB to="/" onClick={authContext.logout} className="signup">
+            Sign Out 
+          </LLB>
+      )
+    } else {
+      return (
+          <LLB to="/register" className="signup">
+            Sign In/Register
+          </LLB>
+      )
+    }
+  }
 
   useEffect(() => {
     setHeight(navbar.current.offsetHeight);
@@ -30,9 +48,7 @@ function Navbar() {
           </LLB>
         </li>
         <li>
-          <LLB to="/register" className="signup">
-            Sign In/Register
-          </LLB>
+          {buttonValue(authContext.isLoggedIn)}
         </li>
       </ul>
     </nav>

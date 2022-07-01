@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef, useContext, useEffect } from "react";
 import AuthContext from "../context/authContext";
 import UserContext from "../context/userContext";
+import "./stylings/Register.css";
 
 function Home() {
   const firstnameInputRef = useRef(null);
@@ -37,7 +38,8 @@ function Home() {
         },
       });
       const data = await response.json();
-      authContext.login(data.message.token);
+      console.log(data.message);
+      authContext.login(data.message.token, data.message._id);
       userContext.writeEmail(email);
 
       const tokenValue = localStorage.getItem("token");
