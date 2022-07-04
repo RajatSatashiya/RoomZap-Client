@@ -11,7 +11,11 @@ function Dashboard() {
   const contactInputRef = useRef(null);
   const genderInputRef = useRef(null);
   const disabledInputRef = useRef(null);
+  const otpInputRef = useRef(null);
+  const verifyInputRef = useRef(null);
 
+  const [otp, setOtp] = useState("");
+  const [phase, setPhase] = useState("otp");
   const authContext = useContext(AuthContext);
 
   const getUser = async () => {
@@ -88,6 +92,47 @@ function Dashboard() {
     }
   };
 
+  const getOTPmail = async () => {
+    try {
+      const response = await fetch("/user/otp", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${authContext.token}`,
+        },
+      });
+
+      const data = await response.json();
+      setOtp(data.message);
+      setPhase("verify");
+      verifyInputRef.current.innerHTML = "Verify";
+    } catch (e) {
+      console.log("Error: " + e);
+    }
+  };
+
+  const verifyAccount = async () => {
+    try {
+      console.log("first: " + otp);
+      console.log("second: " + otpInputRef.current.value);
+      const response = await fetch("/user", {
+        method: "PATCH",
+        body: JSON.stringify({
+          verified: `${otp == otpInputRef.current.value}`,
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${authContext.token}`,
+        },
+      });
+
+      const data = await response.json();
+      console.log(data);
+    } catch (e) {
+      console.log("Error: " + e);
+    }
+  };
+
   const submitForm = (event) => {
     event.preventDefault();
 
@@ -148,13 +193,18 @@ function Dashboard() {
               </label>
             </form>
 
+            <div className="dashboardHeader">
+              <h4>Verify Account</h4>
+              <button
+                type="submit"
+                className="updateBtn"
+                ref={verifyInputRef}
+                onClick={phase == "otp" ? getOTPmail : verifyAccount}
+              >
+                Send OTP
+              </button>
+            </div>
             <form className="updateField">
-              <div className="dashboardHeader">
-                <h4>Verify Account</h4>
-                <button type="submit" className="updateBtn">
-                  Send OTP
-                </button>
-              </div>
               <label>
                 <span>Email</span>
                 <input type="email" ref={disabledInputRef}></input>
@@ -162,7 +212,7 @@ function Dashboard() {
 
               <label>
                 <span>Enter OTP</span>
-                <input type="number"></input>
+                <input type="text" ref={otpInputRef}></input>
               </label>
             </form>
           </div>
