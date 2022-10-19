@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Rentals from "./components/Rentals";
 import Room from "./components/Room";
 import Dashboard from "./components/Dashboard";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   return (
@@ -21,7 +22,10 @@ function App() {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/rentals" element={<Rentals />}></Route>
           <Route path="/createRental" element={<Room />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+
+          <Route element={<PrivateRoute />}>
+            <Route element={<Dashboard />} path="/dashboard" />
+          </Route>
         </Routes>
         <Footer />
       </Router>

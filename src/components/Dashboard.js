@@ -35,6 +35,15 @@ function Dashboard() {
       emailInputRef.current.value = message.email;
       disabledInputRef.current.value = message.email;
       contactInputRef.current.value = message.contact;
+
+      if (message.verified) {
+        setPhase("verified");
+        verifyInputRef.current.innerHTML = "Verified";
+        verifyInputRef.current.disabled = true;
+        disabledInputRef.current.disabled = true;
+        otpInputRef.current.disabled = true;
+      }
+
       updateDate(message.dob);
     } catch (e) {
       console.log("Error: " + e);
@@ -113,8 +122,6 @@ function Dashboard() {
 
   const verifyAccount = async () => {
     try {
-      console.log("first: " + otp);
-      console.log("second: " + otpInputRef.current.value);
       const response = await fetch("/user", {
         method: "PATCH",
         body: JSON.stringify({
@@ -127,7 +134,9 @@ function Dashboard() {
       });
 
       const data = await response.json();
-      console.log(data);
+      if (data.status == "Success") {
+        verifyInputRef.current.innerHTML = "Verified";
+      }
     } catch (e) {
       console.log("Error: " + e);
     }

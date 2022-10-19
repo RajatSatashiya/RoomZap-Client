@@ -38,7 +38,6 @@ function Home() {
         },
       });
       const data = await response.json();
-      console.log(data.message);
       authContext.login(data.message.token, data.message._id);
       userContext.writeEmail(email);
 

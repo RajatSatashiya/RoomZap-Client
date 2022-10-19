@@ -16,10 +16,7 @@ function Landing() {
             <b>“Finding cool roommates, now made easy”</b>
           </p>
         </div>
-        <img
-          src="./images/cool roommate.png"
-          alt="cool-girl-illustration"
-        ></img>
+        <img src="./images/coolroommate.png" alt="cool-girl-illustration"></img>
 
         <div className="search-box">
           <ul className="search-list">
