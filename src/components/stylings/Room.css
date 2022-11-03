@@ -1,21 +1,26 @@
 /********* Room.js ***********/
+.page-heading {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+hr {
+  height: 1.5px;
+  background: rgb(66, 66, 66);
+  width: 20rem;
+  margin: auto;
+}
 .rentaroom {
   margin: 2rem auto;
   padding: 2rem;
+  /* border: 0.2px solid black; */
   border-radius: 15px;
+  box-shadow: 0px 0px 25px -12px black;
   width: 50%;
   min-width: 35rem;
-  background: #4568dc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #b06ab3,
-    #4568dc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #b06ab3,
-    #4568dc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #c5c5c5;
 }
 .innerclass {
   display: flex;
