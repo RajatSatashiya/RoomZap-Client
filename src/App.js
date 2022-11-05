@@ -21,10 +21,13 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/rentals" element={<Rentals />}></Route>
-          <Route path="/createRental" element={<Room />}></Route>
 
           <Route element={<PrivateRoute />}>
             <Route element={<Dashboard />} path="/dashboard" />
+          </Route>
+
+          <Route element={<PrivateRoute />}>
+            <Route element={<Room />} path="/createRental" />
           </Route>
         </Routes>
         <Footer />

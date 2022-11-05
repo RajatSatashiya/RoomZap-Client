@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/authContext";
 import Aptdetails from "./multiform/Aptdetails";
@@ -7,18 +7,6 @@ import Aptaddress from "./multiform/Aptaddress";
 import "./stylings/Room.css";
 
 function Room() {
-  const aptTypeInputRef = useRef(null);
-  const descInputRef = useRef(null);
-  const roomTypeInputRef = useRef(null);
-  const vacancyInputRef = useRef(null);
-  const rentInputRef = useRef(null);
-  const aptNumberInputRef = useRef(null);
-  const streetInputRef = useRef(null);
-  const cityInputRef = useRef(null);
-  const stateInputRef = useRef(null);
-  const pincodeInputRef = useRef(null);
-  const countryInputRef = useRef(null);
-
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     apartmentType: "",
@@ -59,9 +47,6 @@ function Room() {
     }
   };
 
-  const jetha = (arr) => {
-    console.log(arr);
-  };
   const PageDisplay = () => {
     if (page == 0) {
       return <Aptdetails formData={formData} setFormData={setFormData} />;
@@ -82,6 +67,7 @@ function Room() {
         {PageDisplay()}
         <div className="nav-btns">
           <button
+            className="roomSubmit"
             disabled={page === 0}
             onClick={() => {
               setPage(0);
@@ -90,6 +76,7 @@ function Room() {
             Prev
           </button>
           <button
+            className="roomSubmit"
             onClick={() => {
               if (page === 1) {
                 submitForm();

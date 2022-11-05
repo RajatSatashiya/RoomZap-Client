@@ -34,15 +34,41 @@ nav h3,
 /* .nav-list li:hover {
   color: #d7b6b8;
 } */
-.nav-list li:last-child {
+/* .nav-list li:last-child {
   font-weight: 400;
   color: #fafafa;
   background: #2f1f1f;
   border-radius: 12px;
   padding: 0.7rem;
+} */
+
+.profile-icon {
+  background: black;
+  color: white;
+  padding: 0.7rem;
+  border-radius: 100%;
 }
-.signup {
-  color: #fafafa;
+
+.sidebar-container {
+  position: absolute;
+  background: #fafafa;
+  box-shadow: 0 0 25px -10px black;
+  border-radius: 5px;
+  font-family: Montserrat;
+  width: 20%;
+  z-index: 2;
+  left: calc(80% - 5rem);
+}
+
+.profile-hover li {
+  padding: 20px;
+}
+
+.profile-hover li:hover {
+  background: #eceff1;
+}
+.llb-class {
+  color: black;
 }
 
 @media (max-width: 700px) {

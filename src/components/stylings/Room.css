@@ -44,7 +44,9 @@ hr {
   border: none;
   border-radius: 4px;
   margin: 0.3rem;
-  /* outline: none; */
+}
+.nav-btns {
+  text-align: center;
 }
 .roomSubmit {
   font-size: 0.7rem;
@@ -55,14 +57,12 @@ hr {
   border: 1px solid black;
   background: transparent;
   cursor: pointer;
-  margin-top: 1rem;
+  margin: 1rem 0.3rem 0 0.3rem;
   transition: 0.4s ease-in-out;
 }
 .roomSubmit:hover {
-  color: #f9ada0;
-  background: #7661a5;
+  /* color: #a03927; */
+  color: black;
+  background: #9989be;
   transform: scale(1.09);
-}
-.submitBtn {
-  text-align: center;
 }
