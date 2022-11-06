@@ -1,16 +1,19 @@
 nav {
-  display: flex;
   position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav-portion {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background: #eff0b3;
   color: black;
-  top: 0;
   padding: 1.5rem 6rem;
-  z-index: 2;
 }
 
-nav h3,
+.nav-portion h3,
 .project-title {
   color: black;
   font-family: "Montserrat";
@@ -47,6 +50,7 @@ nav h3,
   color: white;
   padding: 0.7rem;
   border-radius: 100%;
+  font-size: 0.7rem;
 }
 
 .sidebar-container {
